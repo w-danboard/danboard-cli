@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "danboard-cli": "./bin/www"
+    "danboard-cli": "./bin/www",
+    "d-cli": "./bin/www"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,11 @@
   },
   "homepage": "https://github.com/w-danboard/danboard-cli#readme",
   "dependencies": {
-    "commander": "^6.1.0"
+    "axios": "^0.20.0",
+    "chalk": "^4.1.0",
+    "commander": "^6.1.0",
+    "inquirer": "^7.3.3",
+    "ora": "^5.1.0"
   },
   "devDependencies": {
     "eslint": "^7.8.1",
