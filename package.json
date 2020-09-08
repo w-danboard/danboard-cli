@@ -1,0 +1,31 @@
+{
+  "name": "danboard-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "danboard-cli": "./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w-danboard/danboard-cli.git"
+  },
+  "keywords": [],
+  "author": "wl-danboard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/w-danboard/danboard-cli/issues"
+  },
+  "homepage": "https://github.com/w-danboard/danboard-cli#readme",
+  "dependencies": {
+    "commander": "^6.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  }
+}
