@@ -12,6 +12,7 @@ module.exports = {
   },
   rules: {
     'no-console': 'off',
+    'no-param-reassign': 'off',
     'global-require': 'off',
     'import/no-dynamic-require': 'off',
   },
