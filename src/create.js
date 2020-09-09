@@ -141,7 +141,7 @@ module.exports = async (projectName) => {
         .use((files, metal, done) => {
           // 根据用户的选择输入，下载模板
           const obj = metal.metadata();
-          Reflect.ownKeys(files).forEach(async (file) => {
+          Object.keys(files).forEach(async (file) => {
             if (file.includes('js') || file.includes('json')) {
               let content = files[file].contents.toString(); // 文件内容
               if (content.includes('<%')) {

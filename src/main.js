@@ -1,21 +1,8 @@
-// 找到要执行的核心文件
 // 1） 要解析用户的参数 process.argv
 const { program } = require('commander');
 const path = require('path');
 const chalk = require('chalk');
 const { version } = require('./constants.js');
-
-/**
- * 关于eslint
- * npm i eslint
- * npx eslint --init
- * vscode中配置eslint 保存时修复
- */
-
-// vue-cli 主要做的是拉取模板，模板里配置的是webpack
-// vue create projectname
-// vue ui ...
-// vue config
 
 const mapActions = {
   create: {
@@ -40,19 +27,7 @@ const mapActions = {
   },
 };
 
-/**
- * 与Obejct.keys区别
- * https://blog.csdn.net/oxgos/article/details/82854848
- *  - Object.keys() 返回属性key，但不包括不可枚举的属性
- *  - Reflect.ownKeys() 返回所有属性key
- *  - Object.keys() 相当于返回属性数组
- *  - Reflect.ownKeys() 相当于Object.getOwnPropertyName(target)
- *    concat(Object.getOwnPropertySymbols(target))
- * 总结：
- *  Object.keys()主要用于遍历对象自有的可枚举属性，不包括继承自原型的属性和不可枚举的属性
- *  Reflect.ownKeys()返回所有自有属性key，不管是否可枚举，但不包括继承自原型的属性
- */
-Reflect.ownKeys(mapActions).forEach((action) => {
+Object.keys(mapActions).forEach((action) => {
   program
     .command(action) // 配置命令的名字
     .alias(mapActions[action].alias) // 命令的别名
@@ -71,7 +46,7 @@ Reflect.ownKeys(mapActions).forEach((action) => {
 
 program.on('--help', () => {
   console.log('\nExamples:');
-  Reflect.ownKeys(mapActions).forEach((action) => {
+  Object.keys(mapActions).forEach((action) => {
     mapActions[action].examples.forEach((example) => {
       console.log(` ${example}`);
     });
