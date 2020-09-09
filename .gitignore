@@ -1,19 +1,2 @@
-.DS_Store
-.history/
-node_modules/
-/dist/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-/logs/
-build/.uglify-cache
-
-# Editor directories and files
-.idea
+node_modules
 .vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-
-/.scannerwork
