@@ -1,31 +1,8 @@
-// 1） 要解析用户的参数 process.argv
-const { program } = require('commander');
 const path = require('path');
 const chalk = require('chalk');
+const { program } = require('commander');
+const mapActions = require('./map-actions');
 const { version } = require('./constants.js');
-
-const mapActions = {
-  create: {
-    alias: 'c',
-    description: 'create a project',
-    examples: [
-      'danboard-cli create <project-name>',
-    ],
-  },
-  config: {
-    alias: 'conf',
-    description: 'config project variable',
-    examples: [
-      'danboard-cli config set <k> <v>',
-      'danboard-cli config get <k>',
-    ],
-  },
-  '*': {
-    alias: '',
-    description: 'command not found',
-    examples: [],
-  },
-};
 
 Object.keys(mapActions).forEach((action) => {
   program
