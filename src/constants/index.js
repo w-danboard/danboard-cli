@@ -7,7 +7,7 @@ const { version } = require('../../package.json');
  *   mac: 'darwin'
  */
 const downloadDirectory = `${process.env[process.platform === 'darwin' ? 'HOME' : 'USERPROFILE']}/.template`;
-debug(chalk.redBright('---downloadDirectory---:', downloadDirectory));
+debug(chalk.redBright('---downloadDirectory---:'), downloadDirectory);
 module.exports = {
   version,
   downloadDirectory,

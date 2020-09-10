@@ -26,10 +26,10 @@ Object.keys(mapActions).forEach((action) => {
 });
 
 program.on('--help', () => {
-  console.log('\nExamples:');
+  console.log(chalk.gray('\nExamples:'));
   Object.keys(mapActions).forEach((action) => {
     mapActions[action].examples.forEach((example) => {
-      console.log(` ${example}`);
+      console.log(chalk.greenBright(` ${example}`));
     });
   });
 });
