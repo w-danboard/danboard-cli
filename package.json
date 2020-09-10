@@ -8,7 +8,7 @@
   },
   "bin": {
     "danboard-cli": "./bin/www",
-    "d": "./bin/www"
+    "danboard": "./bin/www"
   },
   "repository": {
     "type": "git",
