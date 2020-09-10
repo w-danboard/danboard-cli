@@ -1,4 +1,5 @@
 node_modules/
+note.md
 yarn-debug.log*
 yarn-error.log*
 
