@@ -15,5 +15,6 @@ module.exports = {
     'no-param-reassign': 'off',
     'global-require': 'off',
     'import/no-dynamic-require': 'off',
+    'import/no-extraneous-dependencies': 'off',
   },
 };

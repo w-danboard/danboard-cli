@@ -1,4 +1,5 @@
-// cosnt chalk = require('chalk')
+const chalk = require('chalk');
+const debug = require('debug')('development');
 const { version } = require('../../package.json');
 
 /**
@@ -6,8 +7,7 @@ const { version } = require('../../package.json');
  *   mac: 'darwin'
  */
 const downloadDirectory = `${process.env[process.platform === 'darwin' ? 'HOME' : 'USERPROFILE']}/.template`;
-console.log(downloadDirectory);
-console.log(process.env);
+debug(chalk.redBright('---downloadDirectory---:', downloadDirectory));
 module.exports = {
   version,
   downloadDirectory,
