@@ -2,7 +2,7 @@ const path = require('path');
 const chalk = require('chalk');
 const { program } = require('commander');
 const mapActions = require('./map-actions');
-const { version } = require('./constants.js');
+const { version } = require('./constants');
 
 /**
  *  遍历process.argv的参数
