@@ -21,7 +21,7 @@ downloadGitRepo = promisify(downloadGitRepo);
 let ncp = require('ncp');
 // 和download-git-repo包一样 需要用promisify转一下
 ncp = promisify(ncp);
-const { downloadDirectory } = require('./constants');
+const { downloadDirectory } = require('../constants');
 
 // create所有的逻辑
 

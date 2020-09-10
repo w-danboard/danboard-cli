@@ -4,20 +4,24 @@ const { program } = require('commander');
 const mapActions = require('./map-actions');
 const { version } = require('./constants.js');
 
+/**
+ *  遍历process.argv的参数
+ *     mapActions: 所有可执行的参数命令集合
+ *     action: 每个可执行的参数命令
+ */
 Object.keys(mapActions).forEach((action) => {
   program
-    .command(action) // 配置命令的名字
-    .alias(mapActions[action].alias) // 命令的别名
-    .description(mapActions[action].description) // 命令对应的描述
+    .command(action)
+    .alias(mapActions[action].alias)
+    .description(mapActions[action].description)
     .action(() => {
-      if (action === '*') { // 访问不到对应的命令，打印找不到
+      // 访问不到对应的命令
+      if (action === '*') {
         console.log(chalk.redBright('error:'), mapActions[action].description);
         return;
       }
-      // create config...
-      console.log(action);
-      // danboard-cli create xxx // [node, danboard-cli, create]
-      require(path.resolve(__dirname, action))(...process.argv.slice(3)); // 对应的action分配给每个文件执行
+      // 对应的action分配给每个文件执行 [例: d-cli create | d-cli config]
+      require(path.join(__dirname, '/actions', action))(...process.argv.slice(3));
     });
 });
 
